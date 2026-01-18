@@ -5,8 +5,6 @@ const rl = createInterface({
   output: process.stdout,
 });
 
-console.log("Welcome to the simple CLI application!");
-
 function repl() {
   rl.question("$ ", (input: string) => {
     console.log(`${input}: command not found`);

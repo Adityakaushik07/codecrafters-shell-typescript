@@ -5,8 +5,13 @@ const rl = createInterface({
   output: process.stdout,
 });
 
-// TODO: Uncomment the code below to pass the first stage
-rl.question("$ ", (command) => {
-  console.log(`${command}: command not found`)
-  rl.close();
-});
+console.log("Welcome to the simple CLI application!");
+
+function repl() {
+  rl.question("$ ", (input: string) => {
+    console.log(`${input}: command not found`);
+    repl();
+  });
+}
+
+repl();
